@@ -8,24 +8,37 @@
 
 
 const gridElement = document.querySelector("#grid");
+const buttonElementGrid = document.getElementById("start");
 
 //numero di inizio
 let squareNumber = 1;
 
-//griglia 10 x 10
-for (let i = 0; i < 100; i++) {
 
-    //creo 100 div .square
-    const newElement = document.createElement("div");
-    newElement.classList.add("square");
+buttonElementGrid.addEventListener('click',
+    function () {
+        //griglia 10 x 10
+        for (let i = 0; i < 100; i++) {
 
-    //stampo il numero e lo incremento di + 1
-    newElement.innerText = squareNumber;
-    squareNumber++;
+            //creo 100 div .square
+            const newElement = document.createElement("div");
+            newElement.classList.add("square");
 
-    //li inserisco nella griglia
-    gridElement.append(newElement);
-}
+            //stampo il numero e lo incremento di + 1
+            newElement.innerText = squareNumber;
+            squareNumber++;
+
+            //li inserisco nella griglia
+            gridElement.append(newElement);
+
+            //al click, i riquadri si colorano
+            newElement.addEventListener('click',
+                function () {
+                    this.classList.toggle("active");
+                }
+            )
+        }
+    }
+)
 
 
 
