@@ -9,6 +9,8 @@
 
 const gridElement = document.querySelector("#grid");
 
+//numero di inizio
+let squareNumber = 1;
 
 //griglia 10 x 10
 for (let i = 0; i < 100; i++) {
@@ -17,6 +19,13 @@ for (let i = 0; i < 100; i++) {
     const newElement = document.createElement("div");
     newElement.classList.add("square");
 
+    //stampo il numero e lo incremento di + 1
+    newElement.innerText = squareNumber;
+    squareNumber++;
+
     //li inserisco nella griglia
     gridElement.append(newElement);
 }
+
+
+
