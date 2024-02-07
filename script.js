@@ -34,6 +34,7 @@ buttonElementGrid.addEventListener('click',
             newElement.addEventListener('click',
                 function () {
                     this.classList.toggle("active");
+                    console.log(this)
                 }
             )
         }
