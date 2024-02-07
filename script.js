@@ -29,8 +29,9 @@ function createGrid(totalSquares) {
 
     //creo n div
     for (let i = 0; i < totalSquares; i++) {
-        const newElement = document.createElement("div");
+        let newElement = document.createElement("div");
         newElement.classList.add("square");
+
 
         //stampo il numero e lo incremento di + 1
         newElement.innerText = squareNumber;
@@ -58,7 +59,6 @@ const difficultySelect = document.getElementById("difficulty");
 
 buttonElementGrid.addEventListener('click',
     function () {
-
 
         const difficulty = Number(difficultySelect.value);
         const totalSquares = setDifficult(difficulty);
