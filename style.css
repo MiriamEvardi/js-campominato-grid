@@ -27,3 +27,8 @@
 .square.active {
     background-color: blueviolet;
 }
+
+.form-select {
+    min-width: 100px;
+    width: 10%;
+}

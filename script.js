@@ -1,45 +1,75 @@
-//L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
-//Ogni cella ha un numero progressivo, da 1 a 100.
-//Ci saranno quindi 10 caselle per ognuna delle 10 righe.
-//Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro
-//ed emetto un messaggio in console con il numero della cella cliccata.
+// seleziona difficoltà e crea riquadri in base alla difficoltà scelta
+function setDifficult(difficulty) {
+
+    //resetta il numero dei riquadri
+    let totalSquares = 0;
+
+    //10 x 10 hard
+    if (difficulty === 1) {
+        totalSquares = 100;
+
+        //9 x 9 normal
+    } else if (difficulty === 2) {
+        totalSquares = 81;
+
+        //7 x 7 easy
+    } else if (difficulty === 3) {
+        totalSquares = 49;
+    }
+
+    return totalSquares;
+}
 
 
+//creo i riquadri e li inserisco nella griglia
+function createGrid(totalSquares) {
+
+    //numero di inizio
+    let squareNumber = 1;
+
+    //creo n div
+    for (let i = 0; i < totalSquares; i++) {
+        const newElement = document.createElement("div");
+        newElement.classList.add("square");
+
+        //stampo il numero e lo incremento di + 1
+        newElement.innerText = squareNumber;
+        squareNumber++;
+
+        //li inserisco nella griglia
+        gridElement.append(newElement);
+
+        //al click, i riquadri si colorano
+        newElement.addEventListener('click',
+            function () {
+                this.classList.toggle("active");
+
+                console.log(this);
+            }
+        )
+    }
+}
 
 
 const gridElement = document.querySelector("#grid");
 const buttonElementGrid = document.getElementById("start");
-
-//numero di inizio
-let squareNumber = 1;
+const difficultySelect = document.getElementById("difficulty");
 
 
 buttonElementGrid.addEventListener('click',
     function () {
-        //griglia 10 x 10
-        for (let i = 0; i < 100; i++) {
 
-            //creo 100 div .square
-            const newElement = document.createElement("div");
-            newElement.classList.add("square");
 
-            //stampo il numero e lo incremento di + 1
-            newElement.innerText = squareNumber;
-            squareNumber++;
+        const difficulty = Number(difficultySelect.value);
+        const totalSquares = setDifficult(difficulty);
 
-            //li inserisco nella griglia
-            gridElement.append(newElement);
+        // Resetta la griglia
+        gridElement.innerHTML = '';
 
-            //al click, i riquadri si colorano
-            newElement.addEventListener('click',
-                function () {
-                    this.classList.toggle("active");
-                    console.log(this)
-                }
-            )
-        }
+        // Genera le caselle della griglia
+        createGrid(totalSquares);
+
     }
 )
-
 
 
