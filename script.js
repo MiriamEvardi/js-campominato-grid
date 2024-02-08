@@ -5,18 +5,19 @@ function setDifficult(difficulty) {
     let totalSquares = 0;
 
     //10 x 10 hard
-    if (difficulty === 1) {
+    if (difficultySelect.value === "hard") {
         totalSquares = 100;
 
         //9 x 9 normal
-    } else if (difficulty === 2) {
+    } else if (difficultySelect.value === "medium") {
         totalSquares = 81;
+        gridElement.class
 
         //7 x 7 easy
-    } else if (difficulty === 3) {
+    } else if (difficultySelect.value === "easy") {
         totalSquares = 49;
     }
-
+    gridElement.className = difficultySelect.value;
     return totalSquares;
 }
 
@@ -69,5 +70,4 @@ buttonElementGrid.addEventListener('click',
 
     }
 )
-
 

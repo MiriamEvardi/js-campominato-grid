@@ -1,5 +1,5 @@
 .grid-container {
-    width: 800px;
+    width: 1000px;
     padding: 100px 0;
     margin: auto;
 
@@ -19,7 +19,8 @@ nav {
 
 #grid {
     display: flex;
-    width: 800px;
+    width: 1000px;
+    height: 1000px;
     flex-flow: row wrap;
     justify-content: center;
 
@@ -30,8 +31,8 @@ nav {
     justify-content: center;
     align-items: center;
 
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border: solid 1px white;
 
     user-select: none;
@@ -45,6 +46,21 @@ nav {
 .form-select {
     min-width: 100px;
     width: 10%;
+}
+
+#grid.hard .square {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+#grid.medium .square {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+#grid.easy .square {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
 
 
