@@ -24,8 +24,6 @@ function setDifficult(difficulty) {
 //creo i riquadri e li inserisco nella griglia
 function createGrid(totalSquares) {
 
-    //numero di inizio
-    let squareNumber = 1;
 
     //creo n div
     for (let i = 0; i < totalSquares; i++) {
@@ -45,16 +43,16 @@ function createGrid(totalSquares) {
             function () {
                 this.classList.toggle("active");
 
-                console.log(this);
+                console.log(this.innerText);
             }
         )
     }
 }
 
 
-const gridElement = document.querySelector("#grid");
 const buttonElementGrid = document.getElementById("start");
 const difficultySelect = document.getElementById("difficulty");
+const gridElement = document.querySelector("#grid");
 
 
 buttonElementGrid.addEventListener('click',
