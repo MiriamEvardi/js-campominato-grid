@@ -34,8 +34,8 @@ function createGrid(totalSquares) {
 
 
         //stampo il numero e lo incremento di + 1
-        newElement.innerText = squareNumber;
-        squareNumber++;
+        newElement.innerText = i + 1;
+
 
         //li inserisco nella griglia
         gridElement.append(newElement);
